@@ -44,7 +44,7 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 	}
 
 	if m.Content != "" {
-		trigger.Fire("core::message", &msgObject{
+		trigger.Fire("NewMessage", &msgObject{
 			Target:  "irc",
 			Channel: m.ChannelID,
 			Message: m.Content,
@@ -57,7 +57,7 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 	if m.Attachments != nil {
 		for _, attachment := range m.Attachments {
 			if attachment.Size != 0 {
-				trigger.Fire("core::message", &msgObject{
+				trigger.Fire("NewMessage", &msgObject{
 					Target:  "irc",
 					Channel: m.ChannelID,
 					Message: attachment.URL,
@@ -94,7 +94,7 @@ func main() {
 	})
 
 	ircClient.AddCallback("PRIVMSG", func(e *irc.Event) {
-		trigger.Fire("core::message", &msgObject{
+		trigger.Fire("NewMessage", &msgObject{
 			Target:  "discord",
 			Channel: e.Arguments[0],
 			Message: e.Message(),
@@ -119,7 +119,7 @@ func main() {
 		return
 	}
 
-	trigger.On("core::message", func(data interface{}) {
+	trigger.On("NewMessage", func(data interface{}) {
 		fmt.Println("Got message: ", data)
 		msg := data.(*msgObject)
 

@@ -1,4 +1,4 @@
-<h1  align="center">Welcome to nuntius</h1>
+<h1  align="center">Welcome to Nuntius</h1>
 
 <p>
 
@@ -45,9 +45,3 @@
 * Github: [@GvJordan](https://github.com/GvJordan)
 
   
-
-## Show your support
-
-  
-
-Give a ⭐️ if this project helped you!

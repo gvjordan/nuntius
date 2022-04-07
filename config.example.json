@@ -1,24 +1,21 @@
 {
     "discord": {
-        "authToken": "INSERT_DISCORD_AUTH_TOKEN_HERE",
+        "authToken": "DISCORD_AUTH_TOKEN",
         "prefix": ">",
-        "admin": "",
-        "URL": "https://discord.com/api/oauth2/authorize?client_id=948112017728888922&permissions=8&scope=bot"
+        "admin": "user#1111"
     },
     "irc": {
-            "server": "localhost",
+            "server": "irc.example.org",
             "port": 6667,
-            "nick": "nuntius",
-            "userName": "nuntius",
-            "realName": "nuntius",
-            "channels": ["swiftbot"],
+            "nick": "ChangeMe",
+            "userName": "ChangeMe",
+            "realName": "ChangeMe",
+            "channels": ["default_autojoin_channels"],
             "prefix": ">",
-            "admin": ""
+            "admin": "user@userhost.domain.org"
     },
     "channelMapping": {
-        "#gvnet": "948114440581152818",
-        "#programming": "948150632949358642",
-        "#rshelp": "948333630063779860",
-        "#swiftirc": "948335377670865016"
+        "#example": "11111111111111111",
+        "#example2": "22222222222222222",
     }
 }
