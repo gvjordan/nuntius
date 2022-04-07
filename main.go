@@ -57,11 +57,10 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 	if m.Attachments != nil {
 		for _, attachment := range m.Attachments {
 			if attachment.Size != 0 {
-				newURL := getShortLink(attachment.URL)
 				trigger.Fire("core::message", &msgObject{
 					Target:  "irc",
 					Channel: m.ChannelID,
-					Message: newURL,
+					Message: attachment.URL,
 					User:    m.Member.Nick,
 					_User:   m.Author.ID,
 					__User:  m.Author.Username,

@@ -43,6 +43,9 @@ func formatter(data interface{}) string {
 func getColorIndexByUsername(username string) int {
 	firstChar := []rune(username)[0]
 	colorIndex := (int(firstChar) + len(username)) % 19
+	if colorIndex > 15 {
+		colorIndex = 15
+	}
 	return colorIndex
 }
 
